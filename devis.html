@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Demande de Devis - Eratech</title>
+    <style>
+        /* Général */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Occupation totale de l'écran */
+        }
+
+        .form-container {
+            width: 70%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            flex-grow: 1; /* Permet au formulaire de prendre de la place */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #B60B11;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #FFA100;
+            background-color: #FFF4E6;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #FFA100;
+            color: #FFFFFF;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #B60B11;
+        }
+
+        /* Section footer */
+        #footer {
+            padding: 50px 20px;
+            background-color: #000000; /* Fond noir */
+            color: #FFFFFF; /* Texte blanc */
+            text-align: center;
+            margin-top: auto; /* Force le footer en bas */
+        }
+
+        /* Conteneur des colonnes */
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Bloc de chaque colonne */
+        .footer-box {
+            text-align: left;
+        }
+
+        /* Titres des colonnes */
+        .footer-box h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        /* Liste */
+        .footer-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-box ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #FFFFFF;
+        }
+
+        /* Icônes */
+        .footer-box ul li i {
+            margin-right: 10px;
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+
+        /* Style du copyright */
+        .footer-copyright {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .footer-copyright p {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Demande de Devis</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name">Nom complet :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="user-type">Êtes-vous une personne physique ou morale ?</label>
+                <select id="user-type" name="user-type" required>
+                    <option value="physique">Personne Physique (Particulier)</option>
+                    <option value="morale">Personne Morale (Entreprise)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone (optionnel) :</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="service">Type de service souhaité :</label>
+                <select id="service" name="service">
+                    <option value="developpement">Développement logiciel</option>
+                    <option value="conception">Conception de produits électroniques</option>
+                    <option value="support">Support IT</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description du projet :</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Budget estimé (facultatif) :</label>
+                <input type="text" id="budget" name="budget">
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Délais souhaités :</label>
+                <input type="text" id="deadline" name="deadline">
+            </div>
+
+            <div class="form-group">
+                <label for="file">Fichiers ou documents (facultatif) :</label>
+                <input type="file" id="file" name="file">
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer ma demande</button>
+        </form>
+    </div>
+
+    <section id="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>EraTech</h3>
+                <ul>
+                    <li ><a href="index.html#contact">Accueil</a></li>
+                    <li><a href="index.html">À propos</a></li>
+                    <li><a href="index.html">Services</a></li>
+                    <li><a href="index.html">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="index.html">Informatique</a></li>
+                    <li><a href="electronique.html">Électronique</a></li>
+                    <li><a href="formation.html">Formation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <ul>
+                    <li>
+                        <a href="mailto:partenariat@eratech.com">
+                          <i class="fas fa-envelope"></i> partenariat@eratech.com
+                        </a>
+                      </li>
+                    <li><i class="fas fa-phone-alt"></i> +243 123 456 789</li>
+                    <li>
+                        <a href="mailto:conctact@eratech.com">
+                          <i class="fas fa-envelope"></i> contact@eratech.com
+                        </a>
+                      </li>
+                    <li><i class="fas fa-map-marker-alt"></i> Lubumbashi, RDC</li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Suivez-nous</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/in/votre-profil" target="_blank" rel="noopener noreferrer">
+                          <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.facebook.com/votre-page" target="_blank" rel="noopener noreferrer">
+                          <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.instagram.com/votre-profil" target="_blank" rel="noopener noreferrer">
+                          <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                      </li>
+                      
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>&copy; 2024 EraTech. Tous droits réservés.</p>
+        </div>
+        <style>
+            #footer a {
+            text-decoration: none; /* pas de soulignement par défaut */
+            color: inherit;        /* conserve la couleur définie par le parent */
+            }
+
+            #footer a:hover,
+            #footer a:focus,
+            #footer a:active {
+            text-decoration: none; /* pas de soulignement au survol */
+            color: inherit;        /* la couleur reste identique */
+            }
+
+        </style>
+            
+    </section>
+    <script>
+        // Validation et soumission avec AJAX
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Empêche la soumission par défaut du formulaire
+
+                // Récupérer les données du formulaire
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const description = document.getElementById("description").value;
+
+                // Validation basique
+                if (name === "" || email === "" || description === "") {
+                    alert("Tous les champs obligatoires doivent être remplis.");
+                    return; // Arrêter le script si les champs ne sont pas remplis
+                }
+
+                // Créer un FormData avec les données du formulaire
+                const formData = new FormData(form);
+
+                // Envoi des données au serveur avec 'fetch'
+                fetch('/submit-devis', {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json()) // En supposant que la réponse soit en JSON
+                .then(data => {
+                    alert("Votre demande a été envoyée avec succès !");
+                    console.log(data); // Afficher la réponse du serveur
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    alert("Une erreur est survenue.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

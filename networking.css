@@ -1,0 +1,142 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f3f3;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ffa110;
+    color: #B60B11;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #B60B11; /* Couleur par défaut */
+    font-weight: 400;
+}
+
+.menu li a:hover {
+    color: #FFA100; /* Couleur de survol */
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO - Image en plein écran */
+.hero {
+    background: url('https://statics.free-work.com/blog_post_image_large/l-informatique-optique-quand-la-lumiere-devient-calculatrice-LJV8qke6P0PwHszO.jpeg') no-repeat center center scroll;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative; /* Nécessaire pour que la pseudo-classe fonctionne */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Couleur noire avec transparence (0.5) */
+    z-index: 1; /* Assure que l'overlay reste au-dessus de l'image de fond */
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2; /* Permet au texte de rester au-dessus de l'overlay */
+}
+header {
+    background-color: #B60B11;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-description, .contact {
+    background-color: #FFA100;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact li {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

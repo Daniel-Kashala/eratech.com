@@ -1,0 +1,192 @@
+/* Importation de la police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f3f3;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #B60B11;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #B60B11; /* Ajout de la bordure en bas */
+}
+@media (max-width: 768px) {
+    header {
+        background-color: #FFFFFF; /* Fond blanc sur petits écrans */
+    }
+}
+
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    ;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #B60B11; /* Couleur par défaut */
+    font-weight: 400;
+}
+
+.menu li a:hover {
+    color: #FFA100; /* Couleur de survol */
+}
+
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+/* HERO - Image en plein écran */
+.hero {
+    background: url('https://www.openmindt.com/wp-content/uploads/2023/11/how-to-choose-your-programming-language-for-your-software.jpg') no-repeat center center scroll;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    color: white;
+    position: relative; /* Nécessaire pour que la pseudo-classe fonctionne */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.67); /* Couleur noire avec transparence (0.5) */
+    z-index: 1; /* Assure que l'overlay reste au-dessus de l'image de fond */
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2; /* Permet au texte de rester au-dessus de l'overlay */
+}
+
+/* SECTION À PROPOS */
+#a-propos {
+    padding: 80px 10%;
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-image {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    width: 55%;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #FFA100ff;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 120px; /* Taille réduite sur mobile */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #B60B11;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-text {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (min-width: 769px) {
+    .logo img {
+        max-width: 180px; /* Taille modérée pour les écrans larges */
+    }
+}
