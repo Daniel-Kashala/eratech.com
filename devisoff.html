@@ -210,7 +210,42 @@
     <p>✅ Votre demande a été envoyée avec succès !</p>
     <button onclick="returnToForm()">Retour au formulaire</button>
   </div>
+  <style>#confirmation-message {
+  display: none; /* Initialement cachée */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centre la div */
+  width: 40%; /* Prend 40% de la largeur de l'écran */
+  height: 70%; /* Prend 70% de la hauteur de l'écran */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Poppins', sans-serif; /* Applique la police Poppins */
+  box-sizing: border-box;
+  z-index: 1000; /* S'assure qu'elle soit au-dessus des autres éléments */
+}
 
+#confirmation-message p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#confirmation-message button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#confirmation-message button:hover {
+  background-color: #0056b3;
+} </style>
   <section id="footer">
     <!-- Footer content remains the same -->
   </section>
