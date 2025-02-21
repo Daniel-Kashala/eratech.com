@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader avec Logo</title>
+  <style>
+    /* Style global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Conteneur du loader */
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    /* Animation autour du logo */
+    .loader-circle {
+      width: 150px;
+      height: 150px;
+      border: 8px solid #B60B11;
+      border-top: 8px solid transparent;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Logo au centre */
+    .loader-logo img {
+      width: 80px;
+      height: auto;
+    }
+
+    /* Animation de rotation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Disparition du loader */
+    .hide-loader {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader-container" id="loader">
+    <div class="loader-circle">
+      <div class="loader-logo">
+        <img src="ton-logo.png" alt="Logo Eratech">
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenu principal -->
+  <div style="display: none;" id="main-content">
+    <h1 style="text-align:center;">Bienvenue sur EraTech !</h1>
+  </div>
+
+  <script>
+    // Simuler un chargement et retirer le loader
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      const content = document.getElementById('main-content');
+      
+      setTimeout(() => {
+        loader.classList.add('hide-loader');
+        content.style.display = 'block';
+      }, 2500); // Le loader dure 2,5 secondes
+    });
+  </script>
+
+</body>
+</html>
