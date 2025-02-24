@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Page Videos -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/Videos.html</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Stream -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/Stream.html</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Sec -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/Sec.html</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Net01 -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/Net01.html</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Web -->
+  <url>
+    <loc>https://daniel-kashala.github.io/eratech.com/Web.html</loc>
+    <lastmod>2024-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
