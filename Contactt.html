@@ -6,37 +6,40 @@
   <title>Formulaire de Contact</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      padding: 30px;
     }
 
     .form-container {
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
+      color: #333;
     }
 
     label {
       display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
     }
 
     input, select {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
+      padding: 12px;
+      margin-bottom: 18px;
       border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
     }
 
     .phone-group {
@@ -46,17 +49,18 @@
     }
 
     .phone-group select {
-      flex: 1;
+      flex: 2;
     }
 
     .phone-group input[type="text"] {
-      flex: 2;
+      flex: 3;
     }
 
     .checkbox-inline {
       display: flex;
       align-items: center;
       gap: 10px;
+      margin-bottom: 10px;
     }
 
     .hidden {
@@ -64,14 +68,16 @@
     }
 
     button {
-      background: #007BFF;
+      background: #007bff;
       color: white;
+      padding: 14px;
       border: none;
-      padding: 12px;
-      border-radius: 5px;
+      border-radius: 8px;
       width: 100%;
       font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     button:hover {
@@ -82,7 +88,7 @@
 <body>
   <div class="form-container">
     <h2>Contactez-nous</h2>
-    <form>
+    <form id="contact-form">
       <label for="nom">Nom *</label>
       <input type="text" id="nom" name="nom" required>
 
@@ -91,14 +97,7 @@
 
       <label>Numéro de téléphone *</label>
       <div class="phone-group">
-        <select id="indicatif" required>
-          <option value="+243">+243 (RDC)</option>
-          <option value="+33">+33 (France)</option>
-          <option value="+1">+1 (USA)</option>
-          <option value="+44">+44 (UK)</option>
-          <option value="+225">+225 (Côte d’Ivoire)</option>
-          <!-- Ajoute d'autres indicatifs si besoin -->
-        </select>
+        <select id="indicatif" name="indicatif" required></select>
         <input type="text" id="numero" placeholder="Numéro" required>
         <div class="checkbox-inline">
           <input type="checkbox" id="whatsapp">
@@ -128,6 +127,41 @@
   </div>
 
   <script>
+    const indicatifs = [
+      { pays: "RDC", indicatif: "+243" },
+      { pays: "France", indicatif: "+33" },
+      { pays: "Côte d'Ivoire", indicatif: "+225" },
+      { pays: "USA", indicatif: "+1" },
+      { pays: "Belgique", indicatif: "+32" },
+      { pays: "Canada", indicatif: "+1" },
+      { pays: "Sénégal", indicatif: "+221" },
+      { pays: "Cameroun", indicatif: "+237" },
+      { pays: "Togo", indicatif: "+228" },
+      { pays: "Bénin", indicatif: "+229" },
+      { pays: "Maroc", indicatif: "+212" },
+      { pays: "Algérie", indicatif: "+213" },
+      { pays: "Tunisie", indicatif: "+216" },
+      { pays: "Italie", indicatif: "+39" },
+      { pays: "Allemagne", indicatif: "+49" },
+      { pays: "Espagne", indicatif: "+34" },
+      { pays: "Portugal", indicatif: "+351" },
+      { pays: "Afrique du Sud", indicatif: "+27" },
+      { pays: "Nigéria", indicatif: "+234" },
+      { pays: "Kenya", indicatif: "+254" },
+      { pays: "Éthiopie", indicatif: "+251" },
+      { pays: "Inde", indicatif: "+91" },
+      { pays: "Chine", indicatif: "+86" },
+      { pays: "Royaume-Uni", indicatif: "+44" }
+    ];
+
+    const indicatifSelect = document.getElementById('indicatif');
+    indicatifs.forEach(item => {
+      const option = document.createElement('option');
+      option.value = item.indicatif;
+      option.textContent = `${item.pays} (${item.indicatif})`;
+      indicatifSelect.appendChild(option);
+    });
+
     const maintenantRadio = document.getElementById('maintenant');
     const plusTardRadio = document.getElementById('plus-tard');
     const dateHeureContainer = document.getElementById('date-heure-container');
