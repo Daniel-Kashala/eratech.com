@@ -66,7 +66,7 @@
     
     
     
-    <!-- Section Hero avec image de fond -->
+
     <section id="accueil" class="hero" no-repeat center center fixed; background-size: cover; height: 100vh; width: 100%; display: flex; justify-content: center; align-items: center; text-align: center; color: white;">
         <div class="welcome-container">
             <div class="welcome active">
@@ -81,10 +81,10 @@
                     <style>
                       @media (max-width: 768px) {
                         h2 {
-                          font-size: 10px; /* Ajuste la taille pour les petits écrans */
+                          font-size: 10px;
                         }
                       }
-                      /* HERO - Image en plein écran */
+                    
                     .hero {
                         background: url('https://statics.free-work.com/blog_post_image_large/l-informatique-optique-quand-la-lumiere-devient-calculatrice-LJV8qke6P0PwHszO.jpeg') no-repeat center center scroll;
                         background-size: cover;
@@ -95,7 +95,7 @@
                         align-items: center;
                         text-align: left;
                         color: white;
-                        position: relative; /* Nécessaire pour que la pseudo-classe fonctionne */
+                        position: relative;
                     }
 
                     </style>
@@ -110,23 +110,23 @@
             <style>
             .welcome-container {
                 display: flex;
-                justify-content: center; /* Centrer la div principale horizontalement */
+                justify-content: center;
                 padding: 20px;
             }
 
             .welcome {
-                width: 60%; /* La div occupe 60% de la largeur de l'écran */
+                width: 60%;
             }
 
             .welcome h1 {
-                text-align: left; /* Alignement à gauche du titre principal */
+                text-align: left; 
                 font-size: 100px;
                 color: #B60B11;
                 margin-bottom: 0px;
             }
 
             .welcome h2, .welcome p {
-                text-align: left; /* Alignement à gauche du sous-titre et du paragraphe */
+                text-align: left; 
             }
 
             </style>
@@ -161,14 +161,14 @@
             }
 
             .about-image {
-            width: 45%; /* Vous pouvez ajuster cette valeur si nécessaire */
+            width: 45%; 
             }
 
             .about-text {
             width: 55%;
             }
 
-            /* Pour les petits écrans */
+      
             @media (max-width: 768px) {
             .about-container {
                 flex-direction: column;
@@ -262,7 +262,7 @@
             width: 22%;
             margin-bottom: 20px;
             padding: 20px;
-            background-color: #f9f9f9;  /* Couleur du fond des divs */
+            background-color: #f9f9f9;
             text-align: center;
         }
         .valeur-icon {
@@ -472,7 +472,7 @@
             max-width: 800px;
             margin: auto;
             position: relative;
-            height: 120px; /* Fixe la hauteur pour éviter les changements de taille */
+            height: 120px;
         }
         .temoignage {
             position: absolute;
@@ -508,7 +508,7 @@
             temoignages[index].classList.add('active');
         }
     
-        // Démarrer le cycle toutes les 5 secondes
+  
         setInterval(changerTemoignage, 5000);
     </script>
 
@@ -542,7 +542,7 @@
             align-items: center;
         }
         .faq-question::after {
-            content: '\25BC'; /* Symbole flèche vers le bas */
+            content: '\25BC'; 
             font-size: 1rem;
             transition: transform 0.3s ease;
         }
@@ -599,7 +599,7 @@
 
     <section id="footer">
         <div class="footer-container">
-            <!-- Colonne 1 : EraTech -->
+      
             <div class="footer-box">
                 <h3>EraTech</h3>
                 <ul>
@@ -610,7 +610,7 @@
                 </ul>
             </div>
     
-            <!-- Colonne 2 : Services -->
+          
             <div class="footer-box">
                 <h3>Services</h3>
                 <ul>
@@ -620,7 +620,7 @@
                 </ul>
             </div>
     
-            <!-- Colonne 3 : Contact -->
+      
             <div class="footer-box">
                 <h3>Contact</h3>
                 <ul>
@@ -631,7 +631,7 @@
                 </ul>
             </div>
     
-            <!-- Colonne 4 : Suivez-nous -->
+        
             <div class="footer-box">
                 <h3>Suivez-nous</h3>
                 <ul>
@@ -642,22 +642,22 @@
             </div>
         </div>
     
-        <!-- Copyright -->
+    
         <div class="footer-copyright">
             <p>&copy; 2024 EraTech. Tous droits réservés.</p>
         </div>
     </section>
     
     <style>
-        /* Section globale */
+  
         #footer {
             padding: 50px 20px;
-            background-color: #000000; /* Fond noir */
-            color: #FFFFFF; /* Texte blanc */
+            background-color: #000000; 
+            color: #FFFFFF; 
             text-align: center;
         }
     
-        /* Conteneur des colonnes */
+      
         .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -667,12 +667,12 @@
             padding: 20px;
         }
     
-        /* Bloc de chaque colonne */
+      
         .footer-box {
             text-align: left;
         }
     
-        /* Titres des colonnes */
+        
         .footer-box h3 {
             font-size: 22px;
             font-weight: bold;
@@ -680,7 +680,7 @@
             color: #FFFFFF;
         }
     
-        /* Liste */
+      
         .footer-box ul {
             list-style: none;
             padding: 0;
@@ -692,14 +692,14 @@
             color: #FFFFFF;
         }
     
-        /* Icônes */
+    
         .footer-box ul li i {
             margin-right: 10px;
             color: #FFFFFF;
             font-size: 18px;
         }
     
-        /* Style du copyright */
+    
         .footer-copyright {
             margin-top: 30px;
             font-size: 14px;
@@ -710,8 +710,67 @@
         }
     </style>
     
-    <!-- Inclure FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <<div id="fixed-container">
+    <button id="static-button" onclick="window.location.href='https://wa.me/243990737418'">
+        Écrivez-nous WhatsApp <i class="fab fa-whatsapp"></i>
+    </button>
+</div>
+
+<style>
+    #fixed-container {
+        position: fixed;
+        bottom: 50px;
+        right: 5%;
+        z-index: 1000;
+        width: 30%;
+        max-width: 250px;
+    }
+
+    #static-button {
+        width: 100%;
+        background-color: #25D366;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0.2, 0.2);
+        transition: background 0.3s ease;
+    }
+
+    #static-button:hover {
+        background-color: #128C7E;
+    }
+
+    @media (max-width: 768px) {
+        #fixed-container {
+            width: 60%;
+            right: 20%;
+            bottom: 20px;
+        }
+
+        #static-button {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #fixed-container {
+            width: 80%;
+            right: 10%;
+            bottom: 15px;
+        }
+
+        #static-button {
+            font-size: 14px;
+            padding: 10px;
+        }
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
    
 </body>
