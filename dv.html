@@ -3,235 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Demande de Devis - EraTECH</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Formulaire EraTECH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f4f4f4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0;
       padding: 20px;
+      color: #333;
     }
 
-    .form-container {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      padding: 30px 25px;
+    .container {
       max-width: 600px;
-      width: 100%;
-      position: relative;
-    }
-
-    .form-container img {
-      max-width: 150px;
-      display: block;
-      margin: 0 auto 20px;
+      margin: auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     h1 {
       text-align: center;
       color: #B60B11;
-      font-size: 24px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
-    .form-group label {
-      font-weight: 600;
+    label {
       display: block;
       margin-bottom: 6px;
+      font-weight: bold;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group .radio-group input {
+    input, select {
       width: 100%;
       padding: 10px;
-      font-size: 1rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 5px;
     }
 
-    .form-group .phone-group {
+    .phone-group {
       display: flex;
       gap: 10px;
     }
 
-    .form-group .phone-group select {
-      flex: 1;
+    .phone-group select {
+      width: 30%;
     }
 
-    .form-group .phone-group input {
-      flex: 2;
+    .phone-group input {
+      width: 70%;
     }
 
     .radio-group {
       display: flex;
-      gap: 10px;
-      margin-bottom: 15px;
+      flex-direction: column;
     }
 
     .submit-btn {
       width: 100%;
       background-color: #B60B11;
-      color: #fff;
-      border: none;
+      color: white;
       padding: 12px;
-      border-radius: 4px;
-      font-size: 1.1rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
 
     .submit-btn:hover {
-      background-color: #2D1F92;
+      background-color: #FFD700;
+      color: #000;
     }
 
-    #confirmation-message {
-      display: none;
+    #form-message {
       margin-top: 20px;
-      background-color: #d4edda;
-      color: #155724;
-      padding: 15px;
-      border-radius: 4px;
-      border: 1px solid #c3e6cb;
       text-align: center;
-      font-weight: 600;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
     }
 
-    #confirmation-message button {
-      margin-top: 10px;
-      background-color: #2D1F92;
-      color: white;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-inline: 5px;
-    }
-
-    footer {
+    .success-box {
+      display: none;
       background-color: #B60B11;
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 0.95rem;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
     }
 
-    @media (max-width: 480px) {
-      .form-group .phone-group {
-        flex-direction: column;
-      }
+    .success-box h2 {
+      margin-bottom: 20px;
+    }
 
-      #confirmation-message button {
-        display: block;
-        width: 100%;
-        margin: 10px 0 0;
-      }
+    .success-box button {
+      background-color: white;
+      color: #B60B11;
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .success-box button:hover {
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .error {
+      background-color: #ffdddd;
+      color: red;
+      border: 1px solid red;
+    }
+
+    .icon {
+      margin-right: 8px;
+      color: #B60B11;
     }
   </style>
 </head>
 <body>
-  <main>
-    <div class="form-container">
-      <img src="EraTECH-Logo.png" alt="Logo EraTECH" />
-      <h1>Demande de Devis</h1>
-      <form id="quote-form">
-        <div class="form-group">
-          <label for="lastname">Nom :</label>
-          <input type="text" id="lastname" name="lastname" required />
-        </div>
+  <div class="container">
+    <h1><i class="fas fa-paper-plane icon"></i> Demande de service EraTECH</h1>
 
-        <div class="form-group">
-          <label for="firstname">Prénom :</label>
-          <input type="text" id="firstname" name="firstname" required />
-        </div>
-
-        <div class="form-group">
-          <label for="service">Type de service souhaité :</label>
-          <select id="service" name="service" required>
-            <option value="">-- Sélectionnez un service --</option>
-            <option value="web-development">Développement Web</option>
-            <option value="networking">Réseaux Informatiques</option>
-            <option value="security">Sécurité Informatique</option>
-            <option value="graphic-design">Graphisme</option>
-            <option value="car-tracking">Car Tracking</option>
-            <option value="surveillance">Vidéo Surveillance</option>
-            <option value="app-design">Conception d'applications</option>
-            <option value="live-streaming">Live Streaming</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Numéro de téléphone :</label>
-          <div class="phone-group">
-            <select name="country-code" id="country-code" required>
-              <option value="+243">+243 (RDC)</option>
-              <option value="+33">+33 (France)</option>
-              <option value="+32">+32 (Belgique)</option>
-              <option value="+1">+1 (USA/Canada)</option>
-              <option value="+44">+44 (UK)</option>
-              <option value="+225">+225 (Côte d’Ivoire)</option>
-            </select>
-            <input type="tel" id="phone" name="phone" placeholder="123 456 789" required />
-          </div>
-        </div>
-
-        <div class="form-group radio-group">
-          <label>Est-ce un numéro WhatsApp ?</label>
-          <label><input type="radio" name="whatsapp" value="yes" /> Oui</label>
-          <label><input type="radio" name="whatsapp" value="no" /> Non</label>
-        </div>
-
-        <button type="submit" class="submit-btn">Envoyer</button>
-      </form>
-      <div id="confirmation-message">
-        Votre demande a été envoyée avec succès !<br/>
-        <button onclick="resetForm()">Retour au formulaire</button>
-        <button onclick="window.location.href='tel:+243970000000'">Nous contacter</button>
+    <form id="contact-form" action="https://formspree.io/f/mayqzvzp" method="POST">
+      <div class="form-group">
+        <label for="lastname"><i class="fas fa-user icon"></i>Nom</label>
+        <input type="text" id="lastname" name="lastname" required>
       </div>
-    </div>
-  </main>
 
-  <footer>
-    &copy; 2025 EraTECH. Tous droits réservés.
-  </footer>
+      <div class="form-group">
+        <label for="firstname"><i class="fas fa-user icon"></i>Prénom</label>
+        <input type="text" id="firstname" name="firstname" required>
+      </div>
+
+      <div class="form-group">
+        <label for="service"><i class="fas fa-tools icon"></i>Type de service</label>
+        <select id="service" name="service" required>
+          <option value="">-- Sélectionnez un service --</option>
+          <option>Développement web</option>
+          <option>Réseaux informatiques</option>
+          <option>Sécurité informatique</option>
+          <option>Graphisme</option>
+          <option>Car tracking</option>
+          <option>Vidéo surveillance</option>
+          <option>Applications mobiles</option>
+          <option>Live streaming</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="phone"><i class="fas fa-phone icon"></i>Numéro de téléphone</label>
+        <div class="phone-group">
+          <select name="indicatif" required>
+            <option value="+243">+243</option>
+            <option value="+33">+33</option>
+            <option value="+32">+32</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+          </select>
+          <input type="tel" name="phone" placeholder="ex: 990737418" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label><i class="fab fa-whatsapp icon"></i>Est-ce un numéro WhatsApp ?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="whatsapp" value="oui"> Oui</label>
+          <label><input type="radio" name="whatsapp" value="non"> Non</label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Envoyer</button>
+      <div id="form-message"></div>
+    </form>
+
+    <div class="success-box" id="success-box">
+      <h2>✅ Votre demande a été envoyée avec succès !</h2>
+      <button onclick="revenirFormulaire()">Retour au formulaire</button>
+      <a href="tel:+243990737418"><button>Nous contacter</button></a>
+    </div>
+  </div>
 
   <script>
-    const form = document.getElementById('quote-form');
-    const confirmation = document.getElementById('confirmation-message');
+    const form = document.getElementById("contact-form");
+    const messageDiv = document.getElementById("form-message");
+    const successBox = document.getElementById("success-box");
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      form.style.display = 'none';
-      confirmation.style.display = 'block';
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          form.style.display = "none";
+          successBox.style.display = "block";
+          form.reset();
+        } else {
+          return response.json().then(data => {
+            console.error("Détails de l'erreur:", data);
+            if (data.errors) {
+              messageDiv.textContent = "❌ Erreur : " + data.errors.map(error => error.message).join(", ");
+            } else {
+              messageDiv.textContent = "❌ Une erreur est survenue. Code : " + response.status;
+            }
+            messageDiv.className = "error";
+          });
+        }
+      })
+      .catch(error => {
+        console.error("Erreur réseau:", error);
+        messageDiv.textContent = "❌ Problème de connexion ou erreur réseau.";
+        messageDiv.className = "error";
+      });
     });
 
-    function resetForm() {
-      form.reset();
-      form.style.display = 'block';
-      confirmation.style.display = 'none';
+    function revenirFormulaire() {
+      document.getElementById("success-box").style.display = "none";
+      form.style.display = "block";
     }
   </script>
 </body>
